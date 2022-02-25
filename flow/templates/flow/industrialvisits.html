@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'indutstrialvisits.css' %}" />
 </head>
 <body>
     <div class="section" id="section2">
         <div class="workshop">
-          <h1 class="title">Industru</h1>
+          <h1 class="title">Industry</h1>
           <div class="workshop-wrap">
-            {% for w in industrialvisits %}
+            {% comment %} {% for w in industrialvisits %}
             <a href="#">
               <img src="{{w.image.url}}" alt="" />
               <div class="workshop-name">
@@ -20,8 +23,29 @@
               </div>
               
             </a>
-            {% endfor %}
-
+            {% endfor %} {% endcomment %}
+            
+            <div class="cards">
+                {% for w in industrialvisits %}
+                <div class="card">
+                    <span class="close"></span>
+                    <span class="arrow"></span>
+                    <article>
+                    <h2>{{ w.name }}</h2>
+                    {% comment %} <div class="title">{{ w.name }}</div> {% endcomment %}
+                    <div class="pic"><img src="{{w.image.url}}"></div>
+                
+                    <div class="desc">My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown My name is unknown </div>
+                
+                    </article>
+                    <div class="actions">
+                        <button class="btn"><span>Read More</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+                        <button class="btn"><span>View</span><img class="icon" src="https://rafaelavlucas.github.io/assets/icons/misc/trade.svg"></button>
+                  
+                      </div>
+                </div>
+                {% endfor %}
+              </div>
             
           </div>
         </div> 

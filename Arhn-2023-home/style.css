@@ -41,29 +41,30 @@ nav.nav-open {
     transform: translateX(0px);
     border-radius: 0% 0% 0% 0%;
 	 background: rgba(0,0,0, 0.4);
+     width: 18vw;
 }
 
 nav .menu-btn {
     position: absolute;
-    top: 10%;
+    top: 3%;
     right: 5%;
     padding: 0;
-    width: 30px;
+    width: 50px;
     cursor: pointer;
     z-index: 2000;
 }
 
 nav .menu-btn .line {
     padding: 0;
-    width: 30px;
-    background: #580b0b;
-    height: 2px;
+    width: 50px;
+    background: #3e0808;
+    height: 5px;
     margin: 5px 0;
     transition: all 700ms cubic-bezier(.9, 0, .33, 1);
 }
 
 nav .menu-btn .line.line--1 {
-    width: 30px;
+    width: 38px;
     transform: rotate(0) translateY(0);
 }
 
@@ -103,7 +104,7 @@ nav .nav-links {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     transform: translateX(-100px);
     opacity: 0;
@@ -124,15 +125,16 @@ nav .nav-links .link {
     text-transform: uppercase;
     font-size: 1.2rem;
     transition: all 300ms cubic-bezier(.9, 0, .33, 1);
+    padding: 4px 30px;
 }
 nav .nav-links .link:hover{
-    background: linear-gradient(to left,transparent,rgb(209, 198, 198));
+    background: linear-gradient(to left,transparent,rgb(184 164 164));
     border-left: 5px solid whitesmoke;
 }
 
-nav .nav-links .link:hover {
-    color: rgba(0, 0, 0, .5);
-}
+/* nav .nav-links .link:hover {
+   color: rgb(184 164 164);
+} */
 /* .content{
     	background-image: url();
 } */
@@ -158,7 +160,7 @@ nav .nav-links .link:hover {
 	display: flex;
 } */
 a{
-	margin: 0 20px;
+	padding: 2px 12px;
 	color: #fff;
 	font-size: 2rem;
 	transition: all 400ms ease;
@@ -203,7 +205,7 @@ a:hover{
 .social_links{
     display: flex;
     flex-direction: row;
-    padding: 50px;
+    padding: 20px 10px;
 }
 
 .aarohan-text-container-img{
@@ -238,8 +240,18 @@ a:hover{
 
 
 @media (max-width: 992px) {
-
 body{
     background-image: url('./assets/img/wholePhone.png');
 }
+nav.nav-open {
+     width: 30vw;
+
 }
+.social_links{
+    margin-left: 15px;
+}
+}
+@media (min-width:1000px ) and (max-width: 1200px) {
+    .nav-home{
+         width: 25vw !important; 
+    }}

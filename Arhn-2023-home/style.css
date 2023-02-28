@@ -18,12 +18,16 @@ body {
 	
 }
 .logos{
+    position: absolute;
+    bottom: 0vh;
+    right: 2vw;
     margin: 27px 5px;
 }
 
 .logo{
-    width: 30px;
-    margin-right: 5px;
+    width: 80px;
+    margin-right: 10px;
+    padding-right: 5px;
 }
 
 /* .full-body{
@@ -60,6 +64,10 @@ nav .menu-btn {
     width: 50px;
     cursor: pointer;
     z-index: 2000;
+}
+
+nav .menu-open{
+    width: 30px;
 }
 
 nav .menu-btn .line {
@@ -220,6 +228,17 @@ a:hover{
 @media (max-width:600px){
     body{
         background-size: 100% 100%;
+    }
+    .logos{
+        position: absolute;
+        top: 0vh;
+        right: 0;
+        margin: 22px 3px;
+    }
+    .logo{
+        width: 45px;
+        margin-right: 5px;
+        padding-right: 3px;
     }
     nav.nav-open {
         width: 45vw !important;

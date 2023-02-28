@@ -6,6 +6,7 @@ var lineThree = document.querySelector('nav .menu-btn .line--3');
 var link = document.querySelector('nav .nav-links');
 menuBtn.addEventListener('click', () => {
     nav.classList.toggle('nav-open');
+    menuBtn.classList.toggle('menu-open');
     lineOne.classList.toggle('line-cross');
     lineTwo.classList.toggle('line-fade-out');
     lineThree.classList.toggle('line-cross');

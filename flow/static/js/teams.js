@@ -1,128 +1,50 @@
-var category=0
+WebFont.load({
+    google: {
+      families: [
+        "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
+        "DM Sans:regular,italic,500,500italic,700,700italic:latin,latin-ext",
+      ],
+    },
+  });
 
-colorPalette=["#0a043c","#03506f","#4cd3c2","#b7efcd"]
+  !(function (o, c) {
+    var n = c.documentElement,
+      t = " w-mod-";
+    (n.className += t + "js"),
+      ("ontouchstart" in o ||
+        (o.DocumentTouch && c instanceof DocumentTouch)) &&
+        (n.className += t + "touch");
+  })(window, document);
 
-teams=JSON.parse(document.getElementById("teams").textContent)
-members=JSON.parse(document.getElementById("members").textContent)
-console.log(teams)
-console.log(members)
-
-
-var no_of_categories=teams.length;
-
-var left=document.getElementsByClassName('fa-backward')[0]
-var right=document.getElementsByClassName('fa-forward')[0]
-
-const changeTeams=()=>{
-    cat=category
-    console.log("category idx", category)
-    var no_of_cards=members[category].length;
-
-    // console.log(category,"category")
-    // console.log("changing category",teams[category].name,no_of_cards,members[category][0])
-
-    document.getElementById("cards").innerHTML="";
-
-    for(let i=1;i<=no_of_cards;i++)
-    {
-        document.getElementById("cards").innerHTML+=
-        `<div class="card glitch" id="card${i}" card_no="${i}">
-            <img src="static/aarhnLogo.png" alt="">
-            <div class="glitch__layers">
-                <div class="glitch__layer"></div>
-                <div class="glitch__layer"></div>
-                <div class="glitch__layer"></div>
-            </div>
-            <h1 class="member-details name">Name</h1>
-            <h3 class="member-details name">Club Name</h3>
-        </div>`
-    }
-
-    for(let j=0;j<no_of_cards;j++)
-    {
-        const image=`media\/${members[category][j].profile_img}`
-        document.querySelector(`#card${j+1} img`).src=image;
-        document.querySelectorAll(`#card${j+1} div.glitch__layers div.glitch__layer`).forEach((layer)=>layer.style.backgroundImage=`url(${image})`)
-    }
-
-    const cards=document.querySelectorAll(".card img")
-
-    document.querySelectorAll(".card").forEach((card)=>{
-        let memberDetails=document.getElementById("member-details")
-        let teamCategory=document.getElementById("team-category")
-        
-        card.addEventListener("mouseover",()=>{
-            // card.classList.add("sparkle")
-            card.style.zIndex=2
-
-            let memberName=document.getElementById("member-name")
-            let memberClub=document.getElementById("member-club")
-            let memberPosition=document.getElementById("member-position")
-
-            console.log(category,"cat now")
-
-            let card_no=card.getAttribute("card_no")
-           
-            console.log("card no", members[cat][card_no-1].name)
-            let name= `${members[cat][card_no-1].name}`
-            let club= `${members[cat][card_no-1].choice}`
-            let position= `${members[cat][card_no-1].position}`
-
-            memberName.innerHTML=name
-            memberClub.innerHTML=club
-            memberPosition.innerHTML=position
-
-            memberName.setAttribute("data-text",name)
-            memberPosition.setAttribute("data-text",position)
-            memberClub.setAttribute("data-text",club)
-
-            memberDetails.style.display="flex"
-            teamCategory.style.display="none"
-        })
-        card.addEventListener("mouseleave",()=>{
-            // card.classList.remove("sparkle")
-            card.style.zIndex=0;
-
-            memberDetails.style.display="none"
-            teamCategory.style.display="flex"
-        })
-    })
-        
-    let teamCategory=`${teams[category].name}`
-    let categoryTag=document.getElementById("team-category")
-    categoryTag.innerHTML=teamCategory
-
-    document.getElementById("team-category").setAttribute("data-text",teamCategory)
-    
-    document.getElementById("color-css").href=`../static/css/teams/teams${category%3+1}.css`
-}
-
-changeTeams()
-
-const changeColor=()=>{
-    category++;
-    if(category==no_of_categories)
-        category=0
-    console.log("changing color")
-    changeTeams()
-}
-
-var interval= setInterval(changeColor,10000)
-
-left.addEventListener("click", ()=>{
-    clearInterval(interval)
-    interval = setInterval(changeColor,10000)
-    category--;
-    if(category<0)
-    category=no_of_categories-1
-    changeTeams()
-})
-
-right.addEventListener("click", ()=>{
-    clearInterval(interval)
-    interval = setInterval(changeColor,10000)
-    category++;
-    if(category==no_of_categories)
-    category=0
-    changeTeams()
-})
+  window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-REZ8MWBW1B", { anonymize_ip: false });
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.agent = "plwebflow";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "474056224626923");
+      fbq("track", "PageView");

@@ -1,88 +1,54 @@
-<html>
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-    {% load static %}
-    <title>
-        AAROHAN
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'main.css' %}">
-    <link rel="stylesheet" href="{% static 'footer.css' %}">    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    footer{
-        width: 100%;
-        height: auto;
-    }
-    i{
-        margin-left:10px;
-        color: #cccc
-    }
-    </style>
-        
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAROHAN 2023</title>
+  <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static '../static/css/style.css'%}">
 </head>
-
-
 <body>
-    
-    <div class="overlay"></div>
-    <div class="scanline"></div>
-    <div class="wrapper">
-        <img id ="logo" src="{% static 'aarhnLogo.png' %}" width="60" height="60">
-        <div class="content clearfix">
-            <a class="switcher" href="#"></a>
-            <div class="screen glitch">
-                
-                <div class="clock is-off">
-                    <h1  id="title" style="font-family: 'Righteous', cursive;"><b>AAROHAN 2021</b></h1>
-                    <h2  id="sub">By Team Aavishkar</h2>
-                    <div class="timer">
+	
+<!-- partial:index.partial.html -->
+<!-- <nav style="height: 50px;"> -->
+	<!-- <div class="full-body"> -->
+    <!-- <img class="main-img" style="width: 10vw;" src="assets/img/bg.png" /> -->
+  <nav class="nav-home">
+  <div class="menu-btn">
+		<div class="line line--1"></div>
+		<div class="line line--2"></div>
+		<div class="line line--3"></div>
+	</div>
+	<div class="nav-links">
+		<a href="" class="link">HOME</a>
+		<a href="" class="link">EVENTS</a>
+		<a href="{% url 'teams' %}" class="link">TEAMS</a>
+		<a href="" class="link">WORKSHOPS</a>
+		<a href="" class="link">CONTACT US</a>
 
-                        <div>
-                            <li id="timer"><span id="days"></span>days</li>
-                            <li id="timer"><span id="hours"></span>Hours</li>
-                            <li id="timer"><span id="minutes"></span>Minutes</li>
-                            <li id="timer"><span id="seconds"></span>Seconds</li>
-                        </div>
+    <!-- Social Links -->
+    <div id="social_icons" class="social_links">
+      <a href="https://www.facebook.com/arhn.nitd/"><i id="icn1" class="fab fa-facebook-square"></i></a></br>
+      <a href="https://www.instagram.com/arhn.nitd/"><i id="icn2" class="fab fa-instagram"></i></a></br>
+      <a href="https://twitter.com/aarohan_nitdgp?lang=en"><i id="icn3"
+              class="fab fa-twitter-square"></i></a></br>
+      <a href="https://www.youtube.com/user/arhnNITD"><i id="icn4" class="fab fa-youtube"></i></a></br>
+  </div>
+	</div>
 
-                    </div>
-                    <i><h2  id="tag">#Matrix   Is   Everywhere</h2></i>
-                </div>
-                <div class="figure"></div>
-            </div>
-            <script src="{% static 'glitch.js' %}"></script>
-            <script src="{% static 'header.js' %}"></script>
-            <div class="footer">
-                <div class="icons">
-                    <a data-toggle="tooltip" title="Facebook" data-placement="top" href="https://www.facebook.com/arhn.nitd/" target="_blank">
-                        <i class="fa fa-facebook-square fa-2x"></i>
-                    </a>
-                    <a data-toggle="tooltip" title="instagram" data-placement="top" href="https://www.instagram.com/arhn.nitd/" target="_blank">
-                        <i class="fa fa-instagram fa-2x"></i>
-                    </a>
-                    <a data-toggle="tooltip" title="Twitter" data-placement="top" href="https://twitter.com/aarohan_nitdgp" target="_blank">
-                        <i class="fa fa-twitter-square fa-2x"></i>
-                    </a>
-                    <a data-toggle="tooltip" title="Linkedin" data-placement="top" href="https://www.linkedin.com/company/aarohan-nit-durgapur/" target="_blank">
-                        <i class="fa fa-linkedin-square fa-2x"></i>
-                    </a>
-                    <a data-toggle="tooltip" title="Youtube" data-placement="top" href="https://www.youtube.com/channel/UCDRVna-w5uai2Vrcp5WgvSg" target="_blank">
-                        <i class="fa fa-youtube-square fa-2x"></i>
-                    </a>
-                  </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</nav>
+<div class="logos"> 
+  <img class="logo arhn_logo" src="{% static '../static/img/aarohan_logo1-01.png' %}" alt="" srcset="" >
+  <img class="logo arhn_logo" src="{% static '../static/img/SAVE_20230228_135222.png' %}" alt="" srcset="" >
+</div>
+<!-- </div> -->
+
+
+
+
+  <script  src="{% static '../static/js/script.js' %}"></script>
 
 </body>
-
 </html>
+
